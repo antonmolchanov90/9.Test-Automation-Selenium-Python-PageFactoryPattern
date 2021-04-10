@@ -1,2 +1,1 @@
-# 9.Test-Automation-Selenium-Python-PageFactoryPattern
-Repo for page factory pattern.
+Repo for page factory pattern in test automation.
