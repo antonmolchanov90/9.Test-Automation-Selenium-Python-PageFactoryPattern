@@ -7,8 +7,8 @@ class Example(PageFactory):
     def __init__(self, driver):
         self.driver = driver
 
-    # define locators dictionary where key name will became WebElement using PageFactory
-    locators = {
+    # Elements dictionary where key name will become WebElement using PageFactory
+    elements = {
         "searchInput": ('CSS', 'body > table > tbody > tr:nth-child(2) > td > table:nth-child(1) > tbody > '
                                'tr:nth-child(1) > td.t1 > table > tbody > tr > td:nth-child(2) > input[type=text]'),
         "searchButton": ('CSS', 'body > table > tbody > tr:nth-child(2) > td > table:nth-child(1) > tbody > '
@@ -16,7 +16,7 @@ class Example(PageFactory):
     }
 
     def open_site_search(self):
-        # set_text(), click_button() methods - extended methods in PageFactory
+        # set_text(), click_button() - extended methods in PageFactory
         self.searchInput.set_text("Лоськов")
         self.searchButton.click_button()
 
@@ -24,7 +24,7 @@ class Example(PageFactory):
 def test_open_site_search():
     driver = webdriver.Chrome("/opt/chromedriver")
     driver.maximize_window()
-    driver.implicitly_wait(6)
+    driver.implicitly_wait(5)
     driver.get("https://lokomotiv.info/")
     test = Example(driver)
     test.open_site_search()
